@@ -37,6 +37,10 @@ build-custom:
 	docker tag $(NAME):$(VERSION) gliderlabs/$(NAME):master
 	cd custom && docker build -t $(NAME):custom .
 
+build-custom-rjv:
+	docker tag $(NAME):$(VERSION) gliderlabs/$(NAME):master
+	cd rjv-custom && docker build -t $(NAME):custom .
+
 lint:
 	test -x $(GOPATH)/bin/golint || go get github.com/golang/lint/golint
 	go get \
